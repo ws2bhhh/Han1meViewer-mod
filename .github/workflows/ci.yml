@@ -17,17 +17,11 @@ jobs:
                   HA_GITHUB_TOKEN: ${{ secrets.HA_GITHUB_TOKEN }}
               run: |
                   set -euo pipefail
-                  missing=0
-                  for name in KEYSTORE_BASE64 KEYSTORE_PASSWORD KEY_PASSWORD KEY_ALIAS HA_GITHUB_TOKEN; do
-                    value="${!name}"
-                    if [ -z "$value" ]; then
-                      echo "::error::Secret $name is empty or not set"
-                      missing=1
-                    else
-                      echo "$name: OK (${#value} chars)"
-                    fi
-                  done
-                  exit $missing
+                  count "$KEYSTORE_BASE64"
+                  count "$KEYSTORE_PASSWORD"
+                  count "$KEY_PASSWORD"
+                  count "$KEY_ALIAS"
+                  count "$HA_GITHUB_TOKEN"
 
             - name: Checkout
               uses: actions/checkout@v4
