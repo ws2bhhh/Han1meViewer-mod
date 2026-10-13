@@ -23,6 +23,7 @@ fun buildHomeHeroItems(
     homePage: HomePage,
     categories: List<HomeCategory>
 ): List<HomeHeroItem> {
+    return emptyList()
     val officialBanner = homePage.banner?.let { banner ->
         HomeHeroItem(
             imageUrl = banner.picUrl,
