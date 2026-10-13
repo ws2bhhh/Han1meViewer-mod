@@ -17,11 +17,11 @@ jobs:
                   HA_GITHUB_TOKEN: ${{ secrets.HA_GITHUB_TOKEN }}
               run: |
                   set -euo pipefail
-                  count "$KEYSTORE_BASE64"
-                  count "$KEYSTORE_PASSWORD"
-                  count "$KEY_PASSWORD"
-                  count "$KEY_ALIAS"
-                  count "$HA_GITHUB_TOKEN"
+                  echo "${#KEYSTORE_BASE64}"
+                  echo "${#KEYSTORE_PASSWORD}"
+                  echo "${#KEY_PASSWORD}"
+                  echo "${#KEY_ALIAS}"
+                  echo "${#HA_GITHUB_TOKEN}"
 
             - name: Checkout
               uses: actions/checkout@v4
