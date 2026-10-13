@@ -629,7 +629,7 @@ object Parser {
                 tags = tagList,
                 myList = myList,
                 playlist = playlist,
-                relatedHanimes = relatedAnimeList,
+                relatedHanimes = emptyList(),
                 artist = artist.logIfParseNull(Parser::hanimeVideoVer2.name, "artist"),
                 favTimes = likesCount,
                 isFav = likeStatus == "1",
