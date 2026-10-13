@@ -64,6 +64,7 @@ fun buildHomeHeroItems(
  * @return 当前站点类型下存在视频内容的分类行列表。
  */
 fun buildCategoryList(homePage: HomePage): List<HomeCategory> {
+    return emptyList()
     val isAVSite = Preferences.baseUrl == HanimeConstants.HANIME_URL[3]
 
     return listOfNotNull(
